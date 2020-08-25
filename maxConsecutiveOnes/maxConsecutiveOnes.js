@@ -1,3 +1,4 @@
+// SOLVED
 const nums = Array.from({ length: Math.floor(Math.random() * 10001) }, () =>
   Math.floor(Math.random() * 2)
 );
