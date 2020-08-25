@@ -1,4 +1,8 @@
-const nums = [1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1];
+const nums = Array.from({ length: Math.floor(Math.random() * 10001) }, () =>
+  Math.floor(Math.random() * 2)
+);
+console.log(`Array of ${nums.length} items:`);
+console.log(nums);
 
 const findMaxConsecutiveOnes = (nums) => {
   let count = 1;
