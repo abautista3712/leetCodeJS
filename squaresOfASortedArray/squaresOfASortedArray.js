@@ -7,9 +7,8 @@ const sortedSquares = (A) => {
   for (let i = 0; i < A.length; i++) {
     Squares.push(Math.pow(A[i], 2));
   }
-  //   A.sort((a, b) => a - b);
-  //   console.log(A);
+  Squares.sort((a, b) => a - b);
+  console.log(Squares);
 };
 
 sortedSquares(A);
-console.log(Squares);
