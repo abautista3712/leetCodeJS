@@ -5,11 +5,23 @@
 const arr = [1, 0, 2, 3, 0, 4, 5, 0];
 
 const duplicateZeros = (arr) => {
-  let i = 0;
-  while (i < arr.length) {
-    console.log(i);
-    i++;
+  let i = arr.length;
+  while (i--) {
+    // if (arr[i] === 0) {
+    // console.log(arr);
+    console.log(arr[i]);
+    // if (arr[i] === 0) {
+    //   console.log(`0 found at index ${i}`);
+      arr.splice(, 0, 0);
+    // }
+    //   return;
+    //   console.log(arr[i]);
+    //   arr.unshift("insert");
+    // }
+    // i++;
   }
 };
 
 duplicateZeros(arr);
+
+// console.log(arr);
