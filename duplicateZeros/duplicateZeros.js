@@ -3,25 +3,19 @@
 // Output: null
 // Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
 const arr = [1, 0, 2, 3, 0, 4, 5, 0];
+const zeroesIndexes = [];
 
 const duplicateZeros = (arr) => {
-  let i = arr.length;
-  while (i--) {
-    // if (arr[i] === 0) {
-    // console.log(arr);
-    console.log(arr[i]);
-    // if (arr[i] === 0) {
-    //   console.log(`0 found at index ${i}`);
-      arr.splice(, 0, 0);
-    // }
-    //   return;
-    //   console.log(arr[i]);
-    //   arr.unshift("insert");
-    // }
-    // i++;
+  let i = 0;
+  while (i < arr.length) {
+    if (arr[i] === 0) {
+      zeroesIndexes.push(i);
+    }
+    i++;
   }
 };
 
 duplicateZeros(arr);
 
-// console.log(arr);
+console.log(`arr ${arr}`);
+console.log(`zeroesIndex ${zeroesIndexes}`);
