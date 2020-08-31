@@ -12,16 +12,18 @@ const arr = [1, 0, 2, 3, 0, 4, 5, 0];
 const zeroesIndexes = [];
 
 const duplicateZeros = (arr) => {
-  let i = 0;
-  while (i < arr.length) {
+  let i = arr.length;
+  while (i--) {
     if (arr[i] === 0) {
       zeroesIndexes.push(i);
     }
-    i++;
   }
+  //   let revZeroesIndexes = zeroesIndexes.reverse();
   let j = 0;
   while (j < zeroesIndexes.length) {
-    arr.splice(zeroesIndexes.reverse()[j], 0, 0);
+    //   console.log("---revZeroesIndexes inside J loop---");
+    //   console.log(revZeroesIndexes);
+    arr.splice(zeroesIndexes[j], 0, 0);
     arr.pop();
     j++;
   }
