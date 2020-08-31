@@ -18,11 +18,8 @@ const duplicateZeros = (arr) => {
       zeroesIndexes.push(i);
     }
   }
-  //   let revZeroesIndexes = zeroesIndexes.reverse();
   let j = 0;
   while (j < zeroesIndexes.length) {
-    //   console.log("---revZeroesIndexes inside J loop---");
-    //   console.log(revZeroesIndexes);
     arr.splice(zeroesIndexes[j], 0, 0);
     arr.pop();
     j++;
