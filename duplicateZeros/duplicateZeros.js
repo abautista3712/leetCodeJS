@@ -7,19 +7,24 @@
 // Input: [1,2,3]
 // Output: null
 // Explanation: After calling your function, the input array is modified to: [1,2,3]
-
 const arr = [];
 const zeroesIndexes = [];
 
 function duplicateZeros(arr) {
-  let i = arr.length;
+  let i = arr.length - 1;
   while (i >= 0) {
+    console.log("---i---");
+    console.log(i);
     if (arr[i] === 0) {
+      console.log("---arr[i] inside loop---");
+      console.log(arr[i]);
+      console.log("---Does arr[i] === 0?---");
+      console.log("Yes");
       console.log("---i inside while loop---");
       console.log(i);
-      console.log("---zeroesIndexes---");
-      console.log(zeroesIndexes);
       zeroesIndexes.push(i);
+      console.log("---zeroesIndexes after push---");
+      console.log(zeroesIndexes);
     }
     i--;
   }
