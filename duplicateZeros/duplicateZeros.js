@@ -7,7 +7,8 @@
 // Input: [1,2,3]
 // Output: null
 // Explanation: After calling your function, the input array is modified to: [1,2,3]
-const arr = [];
+
+const arr = [1, 2, 0, 3];
 const zeroesIndexes = [];
 
 function duplicateZeros(arr) {
@@ -15,6 +16,8 @@ function duplicateZeros(arr) {
   while (i >= 0) {
     console.log("---i---");
     console.log(i);
+    console.log("---arr[i]---");
+    console.log(arr[i]);
     if (arr[i] === 0) {
       console.log("---arr[i] inside loop---");
       console.log(arr[i]);
@@ -28,15 +31,23 @@ function duplicateZeros(arr) {
     }
     i--;
   }
+  //   if (zeroesIndexes.length != 0) {
+  console.log(zeroesIndexes);
   let j = 0;
   while (j < zeroesIndexes.length) {
     arr.splice(zeroesIndexes[j], 0, 0);
     arr.pop();
     j++;
   }
+  //   } else {
+  zeroesIndexes.length = 0;
+  //   }
 }
 
+// ---Run only on VS---
 duplicateZeros(arr);
+// zeroesIndexes = [];
+// --- --- ---
 
 console.log(`---arr after function call---`);
 console.log(arr);
