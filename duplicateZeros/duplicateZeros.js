@@ -9,10 +9,11 @@
 // Explanation: After calling your function, the input array is modified to: [1,2,3]
 
 const arr = [1, 2, 0, 3];
-const zeroesIndexes = [];
+let zeroesIndexes = [];
 
 function duplicateZeros(arr) {
   let i = arr.length - 1;
+  let zeroesIndexes = [];
   while (i >= 0) {
     console.log("---i---");
     console.log(i);
@@ -31,23 +32,15 @@ function duplicateZeros(arr) {
     }
     i--;
   }
-  //   if (zeroesIndexes.length != 0) {
-  console.log(zeroesIndexes);
   let j = 0;
   while (j < zeroesIndexes.length) {
     arr.splice(zeroesIndexes[j], 0, 0);
     arr.pop();
     j++;
   }
-  //   } else {
-  zeroesIndexes.length = 0;
-  //   }
 }
 
-// ---Run only on VS---
 duplicateZeros(arr);
-// zeroesIndexes = [];
-// --- --- ---
 
 console.log(`---arr after function call---`);
 console.log(arr);
