@@ -7,17 +7,18 @@
 //  */
 
 const nums1 = [1, 2, 3, 0, 0, 0];
-const m = nums1.length;
+const m = 3;
 const nums2 = [2, 5, 6];
 const n = nums2.length;
 
 const merge = (nums1, m, nums2, n) => {
   let i = nums1.length;
-  while (i >= 0) {
-    if (nums1[i] === 0) {
-      nums1.splice(i, 1);
-    }
+  while (i >= m) {
+    // if (nums1[i] === 0) {
+    nums1.splice(i, 1);
+    // }
     i--;
+    console.log(nums1);
   }
   let j = 0;
   while (j < nums2.length) {
