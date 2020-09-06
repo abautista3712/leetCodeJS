@@ -4,8 +4,8 @@
 //  * @return {number}
 //  */
 
-const nums = [3, 2, 2, 3];
-const val = 3;
+const nums = [0, 1, 2, 2, 3, 0, 4, 2];
+const val = 2;
 
 const removeElement = (nums, val) => {
   let i = nums.length;
