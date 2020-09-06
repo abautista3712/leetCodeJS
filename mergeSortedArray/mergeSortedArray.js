@@ -12,7 +12,7 @@ const nums2 = [2, 5, 6];
 const n = nums2.length;
 
 const merge = (nums1, m, nums2, n) => {
-  let i = m;
+  let i = nums1.length;
   while (i >= 0) {
     if (nums1[i] === 0) {
       nums1.splice(i, 1);
@@ -24,6 +24,7 @@ const merge = (nums1, m, nums2, n) => {
     nums1.push(nums2[j]);
     j++;
   }
+  nums1.sort((a, b) => a - b);
 };
 
 merge(nums1, m, nums2, n);
