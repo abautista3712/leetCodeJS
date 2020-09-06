@@ -15,20 +15,8 @@ function duplicateZeros(arr) {
   let i = arr.length - 1;
   let zeroesIndexes = [];
   while (i >= 0) {
-    console.log("---i---");
-    console.log(i);
-    console.log("---arr[i]---");
-    console.log(arr[i]);
     if (arr[i] === 0) {
-      console.log("---arr[i] inside loop---");
-      console.log(arr[i]);
-      console.log("---Does arr[i] === 0?---");
-      console.log("Yes");
-      console.log("---i inside while loop---");
-      console.log(i);
       zeroesIndexes.push(i);
-      console.log("---zeroesIndexes after push---");
-      console.log(zeroesIndexes);
     }
     i--;
   }
