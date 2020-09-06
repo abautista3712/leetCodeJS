@@ -19,6 +19,11 @@ const merge = (nums1, m, nums2, n) => {
     }
     i--;
   }
+  let j = 0;
+  while (j < nums2.length) {
+    nums1.push(nums2[j]);
+    j++;
+  }
 };
 
 merge(nums1, m, nums2, n);
