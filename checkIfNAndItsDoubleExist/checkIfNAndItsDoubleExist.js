@@ -17,13 +17,11 @@ let binarySearch = (arr, N) => {
   let endIndex = arr.length - 1;
   while (startIndex <= endIndex) {
     let midIndex = Math.floor((startIndex + endIndex) / 2);
-    if (arr[midIndex] === N) {
-      return true;
-    } else if (arr[midIndex] < N) {
-      startIndex = midIndex += 1;
-    } else {
-      endIndex = midIndex - 1;
-    }
+    arr[midIndex] === N
+      ? true
+      : arr[midIndex] < N
+      ? (startIndex = midIndex += 1)
+      : (endIndex = midIndex - 1);
   }
   return false;
 };
