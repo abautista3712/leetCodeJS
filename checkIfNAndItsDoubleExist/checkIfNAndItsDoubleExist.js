@@ -4,7 +4,7 @@
 //  */
 
 const arr = [10, 2, 5, 3];
-const N = 6;
+const N = 5;
 
 console.log("---arr BEFORE sort()---");
 console.log(arr);
@@ -29,5 +29,8 @@ let binarySearch = (arr, N) => {
 };
 
 binarySearch(arr, N)
-  ? console.log(`N = ${N} exists in arr`)
+  ? (console.log(`N = ${N} exists in arr`),
+    binarySearch(arr, N * 2)
+      ? console.log(`N*2 = ${N * 2} exists in arr`)
+      : console.log(`N = ${N} does NOT exist in arr`))
   : console.log(`N = ${N} does NOT exist in arr`);
