@@ -32,8 +32,12 @@ const checkIfExist = (arr) => {
       console.log(`Checking for value M = ${arr[i]}...`);
       console.log(`M = ${arr[i]} exists in arr`);
       if (arr[i] === 0) {
-        console.log(`N = 0. Ending search.`);
-        return false;
+        if (arr[i + 1] === 0) {
+          console.log("Two 0s exist. True.");
+          return true;
+        }
+        // console.log(`N = 0. Ending search.`);
+        // return false;
       } else if (binarySearch(arr, arr[i] * 2)) {
         console.log(`N = ${arr[i] * 2} exists in arr. Ending search.`);
         return true;
