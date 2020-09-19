@@ -7,7 +7,10 @@ const A = [2, 1];
 
 const validMountainArray = (A) => {
   for (let i = 0; i < A.length; i++) {
-    console.log("Test");
+    if (A[i + 1] < A[i]) {
+      console.log("---MAX Found---");
+      console.log(A[i]);
+    }
   }
 };
 
