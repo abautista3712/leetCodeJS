@@ -7,20 +7,29 @@ const A = [0, 3, 2, 1];
 
 const validMountainArray = (A) => {
   for (let i = 0; i < A.length; i++) {
+    console.log("---i---");
+    console.log(i);
     if (A[i + 1] === A[i]) {
       console.log("---Idential values found. NOT a valid Mountain Array---");
       return false;
     } else if (A[i + 1] > A[i]) {
-      console.log("Increasing...");
+      console.log("---A[i]---");
       console.log(A[i]);
+      console.log("Increase...");
     } else if (A[i + 1] < A[i]) {
-      console.log("Decreasing...");
-      if ((i = A.length - 1)) {
-        console.log("---Valid Mountain Array---");
-        return true;
-      }
+      console.log("---A[i]---");
+      console.log(A[i]);
+      console.log("Decrease...");
+      console.log("---i + 1 ---");
+      console.log(i + 1);
+      console.log("---A.length -1 ---");
+      console.log(A.length - 1);
+    } else if (A[i + 1] < A[i] && i + 1 === A.length - 1) {
+      console.log("End of Array...");
+      console.log("---Valid Mountain Array---");
+      return true;
     } else {
-      console.log("---No increase. NOT a valid Mountain Array---");
+      console.log("---NOT a valid Mountain Array---");
       return false;
     }
   }
