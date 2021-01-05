@@ -4,77 +4,110 @@
  * @return {boolean}
  */
 const arr = [91,4,64,78]
-const pieces = [[78],[4,64],[1]]  
-
-let orderedArrObj = []
+const pieces = [[78],[4,64],[91]]  
 
 var canFormArray = function(arr, pieces) {
-  // Flatten 'pieces' to 1D array. Return false if pieces[i] does not appear in 'arr'
+  // Flatten 'pieces' to 1D array.
   const flattenedPieces = pieces.reduce(
     (accumulator, currentValue) => {
       return accumulator.concat(currentValue)
     },
     []
-  )
-  // console.log(flattenedPieces)
-  
-  for (let i = 0; i < flattenedPieces.length; i++) {
-    if (arr.includes(flattenedPieces[i]) == false) {
-      // console.log(arr.includes(flattenedPieces[i]))
-      return false
+    )
+    // console.log(flattenedPieces)
+    
+    // Return false if pieces[i] does not appear in 'arr'
+    for (let i = 0; i < flattenedPieces.length; i++) {
+      if (arr.includes(flattenedPieces[i]) == false) {
+        console.log(arr.includes(flattenedPieces[i]))
+        return false
+      }
     }
+    
+    // Create object of 'arr' array with 'i' as key and 'arr[i]' as value.
+    let orderedArrObj = []
+    for (let i = 0; i < arr.length; i++) {
+      orderedArrObj.push({"order":i, "value":arr[i]})
+    } 
+
+    // // Sort 'arr' object by value for binary search
+    orderedArrObj.sort((a,b) => {
+      return a.value - b.value
+    })
+
+  // for (let i = 0; i < pieces.length; i++)
+  // {
+    // Define variables for binary search
+    let startIndex = 0
+    let endIndex = orderedArrObj.length - 1
+
+    // let n = pieces[i].length
+    
+    
+    while (startIndex <= endIndex) {
+        let middleIndex = Math.floor((startIndex + endIndex) / 2)
+      console.log(orderedArrObj[middleIndex].value)
+      if (pieces[0][0] == orderedArrObj[middleIndex].value) {
+      //   if (n == 1) {
+         return console.log(`${pieces[0][0]} found in array at index ${middleIndex}`)
+      //   }
+    //   //   else
+    //   //   {
+    //   //     for (let j = 0; j < n; )
+    //   //   }
+      }
+
+      if (pieces[0][0] <  orderedArrObj[middleIndex].value) {
+        endIndex = middleIndex - 1 
+        console.log(`Searching left side of array`)
+      }
+      
+      if (pieces[0][0] >  orderedArrObj[middleIndex].value) {
+        startIndex =  middleIndex + 1
+        console.log(`Searching right side of array`)
+      }
+
+      else {
+        // If number in 'pieces' does not appear in 'arr' return false
+        console.log(`${pieces[0][0]} not found in array`)
+      }
   }
 
-  // Create object of 'arr' array with 'arr' array value as key and 'arr' array order as value.
-  // for (let i = 0; i < arr.length; i++) {
-  //   orderedArrObj[i] = arr[i]
-  // } 
+    console.log(orderedArrObj)
+
+    
+
+  // for (let i = 0; i < )
+
+  // let array1 = [2,1,3],
+//   array2 = [1,2,3,4],
+  // array3 = [1,2];
+
+
+
+// let checker = (arr, target) => target.every(v => arr.includes(v));
+
+// console.log(checker(array2, array1));
+// console.log(checker(array3, array1));
+
+// let checker = (arr, target) => target.every(v => arr.includes(v));
+
+// console.log(checker(arr, pieces[0]));
+// console.log(checker(arr, pieces[1]));
+
+  // console.log(arr.every())
+  // const isBelowThreshold = (currentValue) => currentValue < 40
+
+  // const array1 = [1, 30, 39, 29, 10, 13]
+  
+  // console.log(pieces.every(pieces[0] => arr.includes(x)))
+  // expected output: true
 
   // const check = orderedArrObj.every(element => element.value == 88)
   // console.log(check)
 
 // const found = arr.find(element => element.order == 88);
 // console.log(found);
-
-  // console.log(orderedArrObj)
-
-  // // Sort 'arr' for binary search
-  // arr.sort()
-
-  // for (let i = 0; i < pieces.length; i++)
-  // {
-  //   // Define variables for binary search
-  //   let startIndex = 0
-  //   let endIndex = arr.length - 1
-
-  //   let n = pieces[i].length
-    
-  //   while (startIndex <= endIndex) {
-  //     let middleIndex = Math.floor((startIndex + endIndex) / 2)
-  //     if (pieces[i] == arr[middleIndex]) {
-  //       if (n == 1) {
-  //         return console.log(`${pieces[i]} found in array at index ${middleIndex}`)
-  //       }
-  //       else
-  //       {
-  //         for (let j = 0; j < n; )
-  //       }
-  //     }
-
-  //     if (pieces[i] <  arr[middleIndex]) {
-  //       endIndex = middleIndex - 1 
-  //       console.log(`Searching left side of array`)
-  //     }
-      
-  //     if (pieces[i] >  arr[middleIndex]) {
-  //       startIndex =  middleIndex + 1
-  //       console.log(`Searching right side of array`)
-  //     }
-
-  //   }
-  //   // If number in 'pieces' does not appear in 'arr' return false
-  //   console.log(`${pieces[i]} not found in array`)
-  // }
 }
 
 canFormArray(arr,pieces)
