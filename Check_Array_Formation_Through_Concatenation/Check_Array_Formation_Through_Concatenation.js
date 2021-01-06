@@ -17,12 +17,12 @@ var canFormArray = function(arr, pieces) {
     // console.log(flattenedPieces)
     
     // Return false if pieces[i] does not appear in 'arr'
-    for (let i = 0; i < flattenedPieces.length; i++) {
-      if (arr.includes(flattenedPieces[i]) == false) {
-        console.log(arr.includes(flattenedPieces[i]))
-        return false
-      }
-    }
+    // for (let i = 0; i < flattenedPieces.length; i++) {
+    //   if (arr.includes(flattenedPieces[i]) == false) {
+    //     console.log(arr.includes(flattenedPieces[i]))
+    //     return false
+    //   }
+    // }
     
     // Create object of 'arr' array with 'i' as key and 'arr[i]' as value.
     let orderedArrObj = []
@@ -35,8 +35,8 @@ var canFormArray = function(arr, pieces) {
       return a.value - b.value
     })
 
-  // for (let i = 0; i < pieces.length; i++)
-  // {
+  for (let i = 0; i < flattenedPieces.length; i++)
+  {
     // Define variables for binary search
     let startIndex = 0
     let endIndex = orderedArrObj.length - 1
@@ -71,7 +71,8 @@ var canFormArray = function(arr, pieces) {
         // If number in 'pieces' does not appear in 'arr' return false
         console.log(`${pieces[0][0]} not found in array`)
       }
-  }
+    }
+  } 
 
     console.log(orderedArrObj)
 
