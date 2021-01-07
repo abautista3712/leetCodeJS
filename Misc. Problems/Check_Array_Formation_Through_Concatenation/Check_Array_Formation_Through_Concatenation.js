@@ -35,42 +35,36 @@ var canFormArray = function(arr, pieces) {
       return a.value - b.value
     })
 
-  for (let i = 0; i < flattenedPieces.length; i++)
-  {
     // Define variables for binary search
     let startIndex = 0
     let endIndex = orderedArrObj.length - 1
-
-    // let n = pieces[i].length
+    let middleIndex = Math.floor((startIndex + endIndex) / 2)
     
+    // let n = pieces[i].length
+    console.log(flattenedPieces)
     
     while (startIndex <= endIndex) {
-        let middleIndex = Math.floor((startIndex + endIndex) / 2)
-      console.log(orderedArrObj[middleIndex].value)
-      if (pieces[0][0] == orderedArrObj[middleIndex].value) {
-      //   if (n == 1) {
-         return console.log(`${pieces[0][0]} found in array at index ${middleIndex}`)
-      //   }
-    //   //   else
-    //   //   {
-    //   //     for (let j = 0; j < n; )
-    //   //   }
-      }
+      for (let i = 0; i < flattenedPieces.length; i++)
+      {
+        if (flattenedPieces[i] == orderedArrObj[middleIndex].value) {
+          return console.log(`${flattenedPieces[i]} found in array at index ${middleIndex}`)
+        }
 
-      if (pieces[0][0] <  orderedArrObj[middleIndex].value) {
-        endIndex = middleIndex - 1 
-        console.log(`Searching left side of array`)
-      }
+        if (flattenedPieces[i] <  orderedArrObj[middleIndex].value) {
+          endIndex = middleIndex - 1 
+          console.log(`Searching left side of array`)
+        }
+        
+        if (flattenedPieces[i] >  orderedArrObj[middleIndex].value) {
+          startIndex =  middleIndex + 1
+          console.log(`Searching right side of array`)
+        }
+
+        else {
+          // If number in 'pieces' does not appear in 'arr' return false
+          console.log(`${flattenedPieces[i]} not found in array`)
+        }
       
-      if (pieces[0][0] >  orderedArrObj[middleIndex].value) {
-        startIndex =  middleIndex + 1
-        console.log(`Searching right side of array`)
-      }
-
-      else {
-        // If number in 'pieces' does not appear in 'arr' return false
-        console.log(`${pieces[0][0]} not found in array`)
-      }
     }
   } 
 
