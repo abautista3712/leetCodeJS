@@ -2,17 +2,21 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-const nums = [-4, -1, 0, 3, 10];
+const nums = [-7, -3, 2, 3, 11];
 
 var sortedSquares = function (nums) {
-  let x = nums.length;
+  let n = nums.length;
 
-  let squareCalc = (number) => {
+  let squareNums = (number) => {
     return number ** 2;
   };
-  for (let number in nums) {
-    console.log(squareCalc(nums[number]));
+
+  for (let i = 0; i < n; i++) {
+    nums[i] = squareNums(nums[i]);
   }
+
+  console.log(nums);
+  return nums;
 };
 
 sortedSquares(nums);
