@@ -1,62 +1,80 @@
-let arr = [];
+// let arr = [];
 
-let numItems = 6;
-let numVariability = 10;
+// let numItems = 6;
+// let numVariability = 10;
 
-for (i = 0; i < numItems; i++) {
-  arr.push(Math.floor(Math.random() * numVariability));
-}
+// for (i = 0; i < numItems; i++) {
+//   arr.push(Math.floor(Math.random() * numVariability));
+// }
 
-function swap(array, i, j) {
-  console.log("-->swap called---");
-  let temp = array[i];
-  array[i] = array[j];
-  array[j] = temp;
-}
+// /**
+//  * @param {number[]} nums
+//  * @return {number[]}
+//  */
+const nums = [-7, -3, 2, 3, 11];
 
-function quicksortHoare(array, left, right) {
-  console.log(`---quicksortHoare called---`);
-  console.log(array);
-  left = left || 0;
-  console.log(`left = ${left}`);
-  right = right || array.length - 1;
-  console.log(`right = ${right}`);
+var sortedSquares = function (nums) {
+  let n = nums.length;
+  let squares = [];
 
-  let pivot = partitionHoare(array, left, right);
-  console.log(`pivot: ${pivot}`);
-
-  if (left < pivot - 1) {
-    quicksortHoare(array, left, pivot - 1);
+  for (let i = 0; i < n; i++) {
+    squares.push(nums[i] ** 2);
   }
 
-  if (right > pivot) {
-    quicksortHoare(array, pivot, right);
+  console.log(squares);
+
+  function swap(array, i, j) {
+    console.log("-->swap called---");
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
 
-  return array;
-}
+  function quicksortHoare(array, left, right) {
+    console.log(`---quicksortHoare called---`);
+    console.log(array);
+    left = left || 0;
+    console.log(`left = ${left}`);
+    right = right || array.length - 1;
+    console.log(`right = ${right}`);
 
-function partitionHoare(array, left, right) {
-  console.log("-->partitionHoare called---");
-  let pivot = Math.floor((left + right) / 2);
-  console.log(`pivot = ${pivot}`);
-  while (left < right) {
-    while (array[left] < array[pivot]) {
-      left++;
-    }
-    while (array[right] > array[pivot]) {
-      right--;
+    let pivot = partitionHoare(array, left, right);
+    console.log(`pivot: ${pivot}`);
+
+    if (left < pivot - 1) {
+      quicksortHoare(array, left, pivot - 1);
     }
 
-    if (left <= right) {
-      swap(array, left, right);
-      left++;
-      right--;
+    if (right > pivot) {
+      quicksortHoare(array, pivot, right);
     }
+
+    return array;
   }
-  return left;
-}
 
-console.time("quicksortHoare");
-console.log(quicksortHoare(arr));
-console.timeEnd("quicksortHoare");
+  function partitionHoare(array, left, right) {
+    console.log("-->partitionHoare called---");
+    let pivot = Math.floor((left + right) / 2);
+    console.log(`pivot = ${pivot}`);
+    while (left < right) {
+      while (array[left] < array[pivot]) {
+        left++;
+      }
+      while (array[right] > array[pivot]) {
+        right--;
+      }
+
+      if (left <= right) {
+        swap(array, left, right);
+        left++;
+        right--;
+      }
+    }
+    return left;
+  }
+  console.time("quicksortHoare");
+  console.log(quicksortHoare(squares));
+  console.timeEnd("quicksortHoare");
+};
+
+sortedSquares(nums);
