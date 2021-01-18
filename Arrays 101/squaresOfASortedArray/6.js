@@ -14,48 +14,45 @@ var sortedSquares = function (nums) {
   }
 
   let m = squares.length;
-  const swap = (arr, i, j) => {
-    let tmp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = tmp;
-  };
+  function swap(array, i, j) {
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 
-  const quickSort = (arr, left, right) => {
+  function quickSort(array, left, right) {
+    if (left >= right) {
+      return;
+    }
     left = left || 0;
-    right = right || m - 1;
+    right = right || array.length - 1;
 
-    let pivot = partition(arr, left, right);
+    const index = partition(array, left, right);
 
-    if (left < pivot - 1) {
-      quickSort(arr, left, pivot - 1);
-    }
+    quickSort(array, left, index - 1);
+    quickSort(array, index, right);
 
-    if (right > pivot) {
-      quickSort(arr, pivot, right);
-    }
+    return array;
+  }
 
-    return arr;
-  };
-
-  const partition = (arr, left, right) => {
-    let pivot = Math.floor((left + right) / 2);
-
+  function partition(array, left, right) {
+    const pivot = array[Math.floor((left + right) / 2)];
     while (left <= right) {
-      while (arr[left] < arr[pivot]) {
+      while (array[left] < pivot && left <= right) {
         left++;
       }
-      while (arr[right] > arr[pivot]) {
+      while (array[right] > pivot) {
         right--;
       }
+
       if (left <= right) {
-        swap(arr, left, right);
+        swap(array, left, right);
         left++;
         right--;
       }
     }
     return left;
-  };
-
+  }
   return quickSort(squares);
 };
 console.log(sortedSquares(nums));
