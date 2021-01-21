@@ -53,16 +53,32 @@ var removeElement = function (nums, val) {
   quickSort(nums);
   console.log(nums);
 
-  let n = nums.length;
-  let i = n - 1;
+  const binarySearch = (arr, searchVal) => {
+    let startIndex = 0;
+    let endIndex = arr.length - 1;
 
-  while (i >= 0) {
-    if (nums[i] == val) {
-      nums.pop();
-    } else {
-      i--;
+    while (startIndex <= endIndex) {
+      let middleIndex = Math.floor((startIndex + endIndex) / 2);
+
+      if (searchVal == arr[middleIndex]) {
+        return middleIndex;
+      }
+
+      if (searchVal < arr[middleIndex]) {
+        endIndex = middleIndex - 1;
+      }
+
+      if (searchVal > arr[middleIndex]) {
+        startIndex = middleIndex + 1;
+      }
     }
-  }
+  };
+
+  const swap = (arr, i, j) => {
+    const tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+  };
 
   console.log(nums);
   return nums;
