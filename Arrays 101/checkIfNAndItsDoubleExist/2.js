@@ -13,6 +13,9 @@ var checkIfExist = function (arr) {
       if (arr[j] == 2 * arr[i] && arr[i] != 0) {
         return true;
       }
+      if (arr[i] == 0 && i != j && arr[j] == 2 * arr[i]) {
+        return true;
+      }
     }
   }
   return false;
