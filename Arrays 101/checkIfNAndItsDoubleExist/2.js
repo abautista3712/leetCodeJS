@@ -3,13 +3,16 @@
  * @return {boolean}
  */
 
-const arr = [3, 1, 7, 11];
+const arr = [-2, 0, 10, -19, 4, 6, -8];
 
 var checkIfExist = function (arr) {
   let n = arr.length;
+
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      if (arr[i] == 2 * arr[j]) return true;
+      if (arr[j] == 2 * arr[i] && arr[i] != 0) {
+        return true;
+      }
     }
   }
   return false;
