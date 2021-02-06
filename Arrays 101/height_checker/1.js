@@ -7,17 +7,27 @@ const heights = [1, 1, 4, 2, 1, 3];
 var heightChecker = function (heights) {
   const n = heights.length;
 
-  for (let i = 1; i < n; i++) {
-    let currentVal = heights[i];
-    let j = i - 1;
-    while (j >= 0 && heights[j] > currentVal) {
-      heights[j + 1] = heights[j];
-      j--;
+  function countingSort(arr, min, max) {
+    var i,
+      z = 0,
+      count = [];
+
+    for (i = min; i <= max; i++) {
+      count[i] = 0;
     }
-    heights[j + 1] = currentVal;
+
+    for (i = 0; i < arr.length; i++) {
+      count[arr[i]]++;
+    }
+
+    for (i = min; i <= max; i++) {
+      while (count[i]-- > 0) {
+        arr[z++] = i;
+      }
+    }
+    return arr;
   }
-  return heights;
-  // console.log(heights);
+  console.log(countingSort(heights, 0, n));
 };
 
 console.log(heightChecker(heights));
