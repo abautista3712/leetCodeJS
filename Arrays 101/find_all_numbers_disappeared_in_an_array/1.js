@@ -6,11 +6,19 @@
 const nums = [4, 3, 2, 7, 8, 2, 3, 1];
 
 var findDisappearedNumbers = function (nums) {
-  //   Loop through array
-  // Compare number with index
-  // Remove number if equal
-  // Write index number if not equal
-  // Return array
+  let index = 0;
+
+  //   let uniqueSet = new Set([...nums]);
+  //   nums = [...uniqueSet];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === i && nums[i] <= nums.length) {
+    } else {
+      nums[index++] = i;
+    }
+  }
+
+  return nums;
 };
 
 console.log(findDisappearedNumbers(nums));
