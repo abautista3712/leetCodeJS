@@ -6,25 +6,14 @@
 const nums = [4, 3, 2, 7, 8, 2, 3, 1];
 
 var findDisappearedNumbers = function (nums) {
-  let index = 0;
-
-  //   let uniqueSet = new Set([...nums]);
-  //   nums = [...uniqueSet];
-
-  //   console.log(nums);
-
-  for (let i = 0; i < nums.length; i++) {
-    if (i != nums[i] && nums[i] <= nums.length) {
-    } else {
-      nums[index++] = i;
-    }
-  }
-
-  while (nums.length > index) {
-    nums.pop();
-  }
-
-  return nums;
+  // Check if array nums contains counter value:
+  // Have counter value
+  // Iterate through each array index
+  // Conditionally check if counter value matches any array value
+  // If yes, next counter value
+  // If no, continue checking until nums.length is reached
+  // Push missing values to array
+  // Erase any unnecessary values
 };
 
 console.log(findDisappearedNumbers(nums));
