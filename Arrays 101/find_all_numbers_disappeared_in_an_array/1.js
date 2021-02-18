@@ -6,14 +6,21 @@
 const nums = [4, 3, 2, 7, 8, 2, 3, 1];
 
 var findDisappearedNumbers = function (nums) {
-  // Check if array nums contains counter value:
-  // Have counter value
-  // Iterate through each array index
-  // Conditionally check if counter value matches any array value
-  // If yes, next counter value
-  // If no, continue checking until nums.length is reached
-  // Push missing values to array
-  // Erase any unnecessary values
+  const result = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    const newIndex = Math.abs(nums[i]) - 1;
+    if (nums[newIndex] > 0) {
+      nums[newIndex] *= -1;
+    }
+  }
+
+  for (let i = 1; i <= nums.length; i++) {
+    if (nums[i - 1] > 0) {
+      result.push(i);
+    }
+  }
+  return result;
 };
 
 console.log(findDisappearedNumbers(nums));
