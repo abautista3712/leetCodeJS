@@ -18,31 +18,12 @@ var maxProfit = function (prices) {
 
   // Loop through prices
   for (let i = 0; i < n; i++) {
-    console.log(i);
-
-    console.log(`min = ${min}`);
-    console.log(`prices[min] = ${prices[min]}`);
-
-    console.log(`prices[i] = ${prices[i]}`);
-
-    // if (min === 0) {
-    //   console.log("min === 0");
-    //   console.log("assigning min...");
-    //   min = i;
-    //   console.log(`min = ${min}`);
-    //   console.log(`prices[min] = ${prices[min]}`);
-    // }
-
     //   If prices[i] < min, reassign min
     if (prices[i] < prices[min]) {
-      console.log("prices[i] < prices[min]...");
       min = i;
     } else if (min != i) {
       // If prices[i] > min, assign max
-      console.log("assigning max...");
       max = i;
-      console.log(`max = ${max}`);
-      console.log(`prices[max] = ${prices[max]}`);
     }
 
     // Once max consecutive value has been reached:
@@ -50,7 +31,6 @@ var maxProfit = function (prices) {
     // Reset max and min variables
     if (max != 0) {
       if (i === n - 1 || prices[max + 1] < prices[max]) {
-        console.log("calculating profit...");
         total_profit = total_profit + (prices[max] - prices[min]);
         min = 0;
         max = 0;
