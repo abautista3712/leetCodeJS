@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const prices = [7, 6, 4, 3, 1];
+const prices = [1, 4, 2];
 
 var maxProfit = function (prices) {
   const n = prices.length;
@@ -12,14 +12,16 @@ var maxProfit = function (prices) {
   // min (buy price)
   // max (sell price)
   // total_profit
-  let min = 0;
-  let max = 0;
+  let min = -1;
+  let max = -1;
   let total_profit = 0;
 
   // Loop through prices
   for (let i = 0; i < n; i++) {
     //   If prices[i] < min, reassign min
-    if (prices[i] < prices[min]) {
+    if (min === -1) {
+      min = i;
+    } else if (prices[i] < prices[min]) {
       min = i;
     } else if (min != i) {
       // If prices[i] > min, assign max
@@ -30,10 +32,10 @@ var maxProfit = function (prices) {
     // Calculate profit by subracting max from min
     // Reset max and min variables
     if (max != 0) {
-      if (i === n - 1 || prices[max + 1] < prices[max]) {
+      if (max === n - 1 || prices[max + 1] < prices[max]) {
         total_profit = total_profit + (prices[max] - prices[min]);
-        min = 0;
-        max = 0;
+        min = -1;
+        max = -1;
       }
     }
   }
