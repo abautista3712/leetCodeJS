@@ -14,9 +14,9 @@ var rotate = function (nums, k) {
 
   for (let i = 0; i < nums.length; i++) {
     new_index = (i + k) % nums.length;
-    nums_cache[new_index] = nums[i];
+    nums[new_index] = nums_cache[i];
   }
-  return nums_cache;
+  return nums;
 };
 
 console.log(rotate(nums, k));
