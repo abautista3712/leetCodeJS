@@ -23,13 +23,9 @@ var rotate = function (nums, k) {
     }
   };
 
-  console.log(nums);
-
   k = k % nums.length;
   reverse(nums, 0, nums.length - k - 1);
-  console.log(nums);
   reverse(nums, nums.length - k, nums.length - 1);
-  console.log(nums);
   reverse(nums, 0, nums.length - 1);
 
   return nums;
