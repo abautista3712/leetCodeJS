@@ -3,7 +3,7 @@
  * @return {number[]}
  */
 
-const digits = [1, 9, 9];
+const digits = [9];
 
 var plusOne = function (digits) {
   let n = digits.length - 1;
@@ -15,7 +15,12 @@ var plusOne = function (digits) {
       digits[n - 1] = 0;
       n--;
     }
-    digits[n - 1] = digits[n - 1] + 1;
+    if (n > 0) {
+      digits[n - 1] = digits[n - 1] + 1;
+    } else {
+      digits[0] = 1;
+      digits.push(0);
+    }
   }
   return digits;
 };
