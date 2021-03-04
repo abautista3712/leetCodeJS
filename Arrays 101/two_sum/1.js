@@ -4,24 +4,23 @@
  * @return {number[]}
  */
 
-const nums = [3, 2, 4];
-let target = 6;
+const nums = [2, 7, 11, 15];
+let target = 9;
 
 var twoSum = function (nums, target) {
+  let total = 0;
   let count = 0;
-  let i = 0;
 
-  while (target > 0) {
-    if (nums[i] <= target) {
-      target -= nums[i];
-      nums[count++] = i;
+  for (let i = 0; i < nums.length; i++) {
+    total += nums[i];
+    count++;
+    if (total === target) {
+      while (nums.length > count) {
+        nums.pop();
+      }
+      return nums;
     }
-    i++;
   }
-  while (nums.length > count) {
-    nums.pop();
-  }
-  return nums;
 };
 
 console.log(twoSum(nums, target));
