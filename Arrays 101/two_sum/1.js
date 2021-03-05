@@ -4,21 +4,20 @@
  * @return {number[]}
  */
 
-const nums = [2, 7, 11, 15];
+const nums = [11, 15, 2, 7];
 let target = 9;
 
 var twoSum = function (nums, target) {
   let total = 0;
-  let count = 0;
+  let indexes = [];
 
   for (let i = 0; i < nums.length; i++) {
-    total += nums[i];
-    count++;
-    if (total === target) {
-      while (nums.length > count) {
-        nums.pop();
+    if (nums[i] <= target) {
+      total += nums[i];
+      indexes.push(i);
+      if (total === target) {
+        return indexes;
       }
-      return nums;
     }
   }
 };
