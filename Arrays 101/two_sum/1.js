@@ -4,8 +4,8 @@
  * @return {number[]}
  */
 
-const nums = [3, 2, 3];
-let target = 6;
+const nums = [0, 4, 3, 0];
+let target = 0;
 
 var twoSum = function (nums, target) {
   let total = 0;
@@ -35,7 +35,7 @@ var twoSum = function (nums, target) {
         }
       }
 
-      if (total === target) {
+      if (i == nums.length - 1 && total === target) {
         while (indexes.length > count) {
           indexes.pop();
         }
