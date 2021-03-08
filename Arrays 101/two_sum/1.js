@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 
-const nums = [0, 4, 3, 0];
+const nums = [0, 7, 11, 0];
 let target = 0;
 
 var twoSum = function (nums, target) {
@@ -14,7 +14,13 @@ var twoSum = function (nums, target) {
   let indexes = [];
 
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] <= target) {
+    if (target === 0 && nums[i] === 0) {
+      indexes.push(i);
+
+      if (i === nums.length - 1) {
+        return indexes;
+      }
+    } else if (nums[i] <= target) {
       total += nums[i];
       count++;
       indexes.push(i);
@@ -35,7 +41,7 @@ var twoSum = function (nums, target) {
         }
       }
 
-      if (i == nums.length - 1 && total === target) {
+      if (total === target) {
         while (indexes.length > count) {
           indexes.pop();
         }
