@@ -16,21 +16,48 @@ const board = [
 ];
 
 var isValidSudoku = function (board) {
+  let hash = [];
+
   // Check Rows
   for (let i = 0; i < 9; i++) {
-    // Create Hash Table
-    let hash = [];
+    // Reset Hash Table
     for (let j = 0; j < 9; j++) {
-      hash.push(0);
+      if (hash.length === 0) {
+        hash.push(0);
+      } else {
+        hash[j] = 0;
+      }
     }
 
     for (let k = 0; k < 9; k++) {
-      if (board[i][k] == ".") {
-        k++;
-      } else if (hash[parseInt([board[i][k]]) - 1] == 1) {
-        return false;
+      if (board[i][k] != ".") {
+        if (hash[parseInt([board[i][k]]) - 1] == 1) {
+          return false;
+        } else {
+          hash[parseInt([board[i][k]]) - 1]++;
+        }
+      }
+    }
+  }
+
+  // Check Columns
+  for (let i = 0; i < 9; i++) {
+    // Reset Hash Table
+    for (let j = 0; j < 9; j++) {
+      if (hash.length === 0) {
+        hash.push(0);
       } else {
-        hash[parseInt([board[i][k]]) - 1]++;
+        hash[j] = 0;
+      }
+    }
+
+    for (let k = 0; k < 9; k++) {
+      if (board[k][i] != ".") {
+        if (hash[parseInt([board[k][i]]) - 1] == 1) {
+          return false;
+        } else {
+          hash[parseInt([board[k][i]]) - 1]++;
+        }
       }
     }
     console.log(hash);
