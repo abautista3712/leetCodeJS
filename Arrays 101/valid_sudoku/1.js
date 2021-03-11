@@ -4,7 +4,7 @@
  */
 
 const board = [
-  ["5", "3", ".", ".", "7", ".", ".", ".", "."],
+  ["8", "3", ".", ".", "7", ".", ".", ".", "."],
   ["6", ".", ".", "1", "9", "5", ".", ".", "."],
   [".", "9", "8", ".", ".", ".", ".", "6", "."],
   ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
@@ -32,12 +32,15 @@ var isValidSudoku = function (board) {
     for (let k = 0; k < 9; k++) {
       if (board[i][k] != ".") {
         if (hash[parseInt([board[i][k]]) - 1] == 1) {
+          console.log(`INVALID ROW: ${i}`);
           return false;
         } else {
           hash[parseInt([board[i][k]]) - 1]++;
         }
       }
     }
+    console.log(`---VALID ROW: ${i}---`);
+    console.log(hash);
   }
 
   // Check Columns
@@ -54,12 +57,14 @@ var isValidSudoku = function (board) {
     for (let k = 0; k < 9; k++) {
       if (board[k][i] != ".") {
         if (hash[parseInt([board[k][i]]) - 1] == 1) {
+          console.log(`INVALID COLUMN: ${i}`);
           return false;
         } else {
           hash[parseInt([board[k][i]]) - 1]++;
         }
       }
     }
+    console.log(`---VALID COLUMN: ${i}---`);
     console.log(hash);
   }
 };
