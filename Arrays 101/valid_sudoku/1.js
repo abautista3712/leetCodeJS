@@ -4,7 +4,7 @@
  */
 
 const board = [
-  ["8", "3", ".", ".", "7", ".", ".", ".", "."],
+  ["5", "3", ".", ".", "7", ".", ".", ".", "."],
   ["6", ".", ".", "1", "9", "5", ".", ".", "."],
   [".", "9", "8", ".", ".", ".", ".", "6", "."],
   ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
@@ -16,17 +16,31 @@ const board = [
 ];
 
 var isValidSudoku = function (board) {
-  let hash = [];
-
-  while (hash.length < 9) {
-    hash.push(0);
-  }
-
   for (let i = 0; i < 9; i++) {
+    let hash_row = [];
+    let hash_column = [];
+    let hash_sub_box = [];
+
     for (let j = 0; j < 9; j++) {
-      hash[parseInt(board[i][j]) - 1]++;
-      console.log(hash);
+      // Check Row
+      if (board[i][j] != ".") {
+        let number = parseInt(board[i][j] - 1);
+        if (hash_row[number]) {
+          return false;
+        }
+        hash_row[number] = number + 1;
+      }
+
+      // Check Column
+      if (board[j][i] != ".") {
+        let number = parseInt(board[j][i] - 1);
+        if (hash_column[number]) {
+          return false;
+        }
+        hash_column[number] = number + 1;
+      }
     }
+    console.log(hash_row);
   }
 };
 
