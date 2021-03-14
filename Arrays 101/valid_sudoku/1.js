@@ -26,6 +26,7 @@ var isValidSudoku = function (board) {
       if (board[i][j] != ".") {
         let number = parseInt(board[i][j] - 1);
         if (hash_row[number]) {
+          console.log(`Invalid Row: ${i}, ${j}`);
           return false;
         }
         hash_row[number] = number + 1;
@@ -35,6 +36,7 @@ var isValidSudoku = function (board) {
       if (board[j][i] != ".") {
         let number = parseInt(board[j][i] - 1);
         if (hash_column[number]) {
+          console.log(`Invalid Column: ${j}, ${i}`);
           return false;
         }
         hash_column[number] = number + 1;
@@ -47,12 +49,15 @@ var isValidSudoku = function (board) {
       if (board[m][n] != ".") {
         let number = parseInt(board[m][n] - 1);
         if (hash_sub_box[number]) {
+          console.log(`Invalid Sub-Box: ${m}, ${n}`);
           return false;
         }
         hash_sub_box[number] = number + 1;
       }
     }
+    console.log(`Valid Row, Column, Sub-Box: ${i}`);
   }
+  console.log("---Valid Sudoku---");
 };
 
 isValidSudoku(board);
