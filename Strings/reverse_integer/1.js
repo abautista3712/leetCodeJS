@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const x = -123;
+const x = 123;
 
 var reverse = function (x) {
   let buffer = [];
@@ -28,6 +28,11 @@ var reverse = function (x) {
   if (is_negative == true) {
     x = -x;
   }
+
+  if (x < Math.pow(-2, 31) || x > Math.pow(2, 31) - 1) {
+    return 0;
+  }
+
   return x;
 };
 
