@@ -9,6 +9,10 @@ var reverse = function (x) {
   let buffer = [];
   let last_digit = 0;
 
+  if (x == 0) {
+    return x;
+  }
+
   while (x > 0) {
     last_digit = x % 10;
     buffer.push(last_digit);
@@ -16,7 +20,7 @@ var reverse = function (x) {
   }
 
   x = parseInt(buffer.join(""));
-  console.log(x);
+  return x;
 };
 
-reverse(x);
+console.log(reverse(x));
