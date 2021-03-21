@@ -3,13 +3,20 @@
  * @return {number}
  */
 
-const x = 123;
+const x = 120;
 
 var reverse = function (x) {
-  if (x < -231 || x > 231 - 1) {
-    return 0;
+  let buffer = [];
+  let last_digit = 0;
+
+  while (x > 0) {
+    last_digit = x % 10;
+    buffer.push(last_digit);
+    x = Math.floor(x / 10);
   }
-  // return JSON.stringify(x);
+
+  x = parseInt(buffer.join(""));
+  console.log(x);
 };
 
-console.log(reverse(x));
+reverse(x);
