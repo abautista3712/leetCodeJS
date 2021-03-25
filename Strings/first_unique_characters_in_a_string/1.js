@@ -10,7 +10,11 @@ var firstUniqChar = function (s) {
   let hash_table = {};
 
   for (let i = 0; i < s.length; i++) {
-    console.log(s.charAt(i));
+    let hash_key = s.charAt(i);
+    let hash_value = s.charCodeAt(i);
+
+    hash_table[hash_key] = hash_value;
+    console.log(hash_table);
   }
   // let letter = s.charAt(0);
   // hash_table. = "Test";
