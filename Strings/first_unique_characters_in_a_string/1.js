@@ -14,12 +14,11 @@ var firstUniqChar = function (s) {
 
     console.log(key);
     if (!hash_table[key]) {
-      value = 0;
-      value++;
-      hash_table[key] = value;
-    } else if (hash_table[key] === 1) {
-      value++;
-      hash_table[key] = value;
+      count = 1;
+      hash_table[key] = count;
+    } else if (hash_table[key] >= 1) {
+      count++;
+      hash_table[key] = count;
     }
     console.log(hash_table);
   }
