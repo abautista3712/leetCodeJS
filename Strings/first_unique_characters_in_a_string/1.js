@@ -15,11 +15,10 @@ var firstUniqChar = function (s) {
     console.log(key);
     if (!hash_table[key]) {
       count = 1;
-      hash_table[key] = count;
     } else if (hash_table[key] >= 1) {
       count++;
-      hash_table[key] = count;
     }
+    hash_table[letter] = count;
     console.log(hash_table);
   }
   // let letter = s.charAt(0);
