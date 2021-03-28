@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const s = "loveleetcode";
+const s = "leetcode";
 
 var firstUniqChar = function (s) {
   // Hash Table
@@ -18,8 +18,10 @@ var firstUniqChar = function (s) {
         letter: letter,
         index_found: [i],
       };
-    } else if (hash_table[key].index_found.length == 1) {
-      return i;
+    } else if (hash_table[key].index_found.length >= 1) {
+      let n = hash_table[key].index_found.length;
+
+      hash_table[key].index_found[n] = i;
     }
   }
   console.log(hash_table);
