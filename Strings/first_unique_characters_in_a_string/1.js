@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const s = "leetcode";
+const s = "loveleetcode";
 
 var firstUniqChar = function (s) {
   // Hash Table
@@ -11,23 +11,18 @@ var firstUniqChar = function (s) {
 
   for (let i = 0; i < s.length; i++) {
     let key = s.charCodeAt(i);
+    let letter = s.charAt(i);
 
-    console.log(key);
     if (!hash_table[key]) {
-      count = 1;
-    } else if (hash_table[key] >= 1) {
-      count++;
+      hash_table[key] = {
+        letter: letter,
+        index_found: [i],
+      };
+    } else if (hash_table[key].index_found.length == 1) {
+      return i;
     }
-    hash_table[letter] = count;
-    console.log(hash_table);
   }
-  // let letter = s.charAt(0);
-  // hash_table. = "Test";
-  // console.log(hash_table);
-  // console.log(s.charCodeAt(2));
-  // Read each letter
-  // Register new letters / Increment old letters
-  // Return index of letter that only shows once
+  console.log(hash_table);
 };
 
 console.log(firstUniqChar(s));
