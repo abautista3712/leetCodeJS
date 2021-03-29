@@ -31,5 +31,6 @@ var firstUniqChar = function (s) {
       return j;
     }
   }
+  return -1;
 };
 firstUniqChar(s);
