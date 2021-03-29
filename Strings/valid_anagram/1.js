@@ -4,10 +4,14 @@
  * @return {boolean}
  */
 
-const s = "anagram";
-const t = "nagaram";
+const s = "a";
+const t = "ab";
 
 var isAnagram = function (s, t) {
+  if (s.length != t.length) {
+    return false;
+  }
+
   let hash_table_s = {};
   let hash_table_t = {};
 
@@ -31,8 +35,8 @@ var isAnagram = function (s, t) {
     }
     hash_table_t[key_t] = count_t;
 
-    // console.log(hash_table_s);
-    // console.log(hash_table_t);
+    console.log(hash_table_s);
+    console.log(hash_table_t);
   }
 
   let s_string = JSON.stringify(hash_table_s);
