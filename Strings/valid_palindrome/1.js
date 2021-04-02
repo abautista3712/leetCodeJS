@@ -3,37 +3,55 @@
  * @return {boolean}
  */
 
-const s = "0P";
+const s = " A man, a plan, a canal: Panama";
 
 var isPalindrome = function (s) {
-  let characters = [];
+  // let characters = [];
 
-  for (let i = 0; i < s.length; i++) {
-    let lower_case = String.fromCharCode(s.charCodeAt(i) + 32);
+  // for (let i = 0; i < s.length; i++) {
 
-    if (s.charCodeAt(i) >= 48 && s.charCodeAt(i) <= 57) {
-      characters.push(s.charAt(i));
-    } else if (s.charCodeAt(i) >= 65 && s.charCodeAt(i) <= 90) {
-      characters.push(lower_case);
-    } else if (s.charCodeAt(i) >= 97 && s.charCodeAt(i) <= 122) {
-      characters.push(s.charAt(i));
+  // Function to check if alpha-numeric
+  const is_alpha_numeric = (char) => {
+    let lower_case = String.fromCharCode(s.charCodeAt(char) + 32);
+
+    // Handle Numbers
+    if (
+      (s.charCodeAt(char) >= 48 && s.charCodeAt(char) <= 57) ||
+      (s.charCodeAt(char) >= 65 && s.charCodeAt(char) <= 90) ||
+      (s.charCodeAt(char) >= 97 && s.charCodeAt(char) <= 122)
+    ) {
+      return true;
     }
+    // // Handle Uppercase
+    // else if (s.charCodeAt(char) >= 65 && s.charCodeAt(char) <= 90) {
+    //   return lower_case
+    // }
+    // // Handle Lowercase
+    // else if (s.charCodeAt(char) >= 97 && s.charCodeAt(char) <= 122) {
+    //   return s.charAt(char)
+    // }
+  };
+  // }
+
+  // let i = 0;
+  // let j = s.length - 1;
+
+  let char = s.charAt(0);
+  // while (i < j) {
+  if (is_alpha_numeric(char)) {
+    console.log("Character is alpha-numeric");
+  } else {
+    console.log("Character is NOT alpha-numeric");
   }
-
-  console.log(characters);
-
-  let i = 0;
-  let j = characters.length - 1;
-
-  while (i < j) {
-    if (characters[i] == characters[j]) {
-      i++;
-      j--;
-    } else {
-      return false;
-    }
-  }
-  return true;
+  // if (characters[i] == characters[j]) {
+  //     i++;
+  //     j--;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+  // return true;
+  // }
 };
 
 console.log(isPalindrome(s));
