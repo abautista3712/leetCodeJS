@@ -3,18 +3,13 @@
  * @return {boolean}
  */
 
-const s = " A man, a plan, a canal: Panama";
+const s = "A man, a plan, a canal: Panama";
 
 var isPalindrome = function (s) {
-  // let characters = [];
-
   // for (let i = 0; i < s.length; i++) {
 
   // Function to check if alpha-numeric
   const is_alpha_numeric = (char) => {
-    let lower_case = String.fromCharCode(s.charCodeAt(char) + 32);
-
-    // Handle Numbers
     if (
       (s.charCodeAt(char) >= 48 && s.charCodeAt(char) <= 57) ||
       (s.charCodeAt(char) >= 65 && s.charCodeAt(char) <= 90) ||
@@ -30,6 +25,10 @@ var isPalindrome = function (s) {
     // else if (s.charCodeAt(char) >= 97 && s.charCodeAt(char) <= 122) {
     //   return s.charAt(char)
     // }
+  };
+
+  const make_lowercase = (char) => {
+    return String.fromCharCode(s.charCodeAt(char) + 32);
   };
   // }
 
