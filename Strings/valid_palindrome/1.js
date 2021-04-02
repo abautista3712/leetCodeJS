@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 
-const s = "A man, a plan, a canal: Panama";
+const s = "race a car";
 
 var isPalindrome = function (s) {
   let letters = [];
@@ -17,7 +17,19 @@ var isPalindrome = function (s) {
       letters.push(s.charAt(i));
     }
   }
-  console.log(letters);
+
+  let i = 0;
+  let j = letters.length - 1;
+
+  while (i < j) {
+    if (letters[i] == letters[j]) {
+      i++;
+      j--;
+    } else {
+      return false;
+    }
+  }
+  return true;
 };
 
 console.log(isPalindrome(s));
