@@ -38,7 +38,11 @@ var isPalindrome = function (s) {
   let char = s.charAt(0);
   // while (i < j) {
   if (is_alpha_numeric(char)) {
-    console.log("Character is alpha-numeric");
+    if (s.charCodeAt(char) >= 65 && s.charCodeAt(char) <= 90) {
+      return make_lowercase(char);
+    } else {
+      return char;
+    }
   } else {
     console.log("Character is NOT alpha-numeric");
   }
