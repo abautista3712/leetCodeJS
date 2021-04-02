@@ -3,26 +3,30 @@
  * @return {boolean}
  */
 
-const s = "race a car";
+const s = "0P";
 
 var isPalindrome = function (s) {
-  let letters = [];
+  let characters = [];
 
   for (let i = 0; i < s.length; i++) {
     let lower_case = String.fromCharCode(s.charCodeAt(i) + 32);
 
-    if (s.charCodeAt(i) >= 65 && s.charCodeAt(i) <= 90) {
-      letters.push(lower_case);
+    if (s.charCodeAt(i) >= 48 && s.charCodeAt(i) <= 57) {
+      characters.push(s.charAt(i));
+    } else if (s.charCodeAt(i) >= 65 && s.charCodeAt(i) <= 90) {
+      characters.push(lower_case);
     } else if (s.charCodeAt(i) >= 97 && s.charCodeAt(i) <= 122) {
-      letters.push(s.charAt(i));
+      characters.push(s.charAt(i));
     }
   }
 
+  console.log(characters);
+
   let i = 0;
-  let j = letters.length - 1;
+  let j = characters.length - 1;
 
   while (i < j) {
-    if (letters[i] == letters[j]) {
+    if (characters[i] == characters[j]) {
       i++;
       j--;
     } else {
