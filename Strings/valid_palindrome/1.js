@@ -17,14 +17,7 @@ var isPalindrome = function (s) {
     ) {
       return true;
     }
-    // // Handle Uppercase
-    // else if (s.charCodeAt(char) >= 65 && s.charCodeAt(char) <= 90) {
-    //   return lower_case
-    // }
-    // // Handle Lowercase
-    // else if (s.charCodeAt(char) >= 97 && s.charCodeAt(char) <= 122) {
-    //   return s.charAt(char)
-    // }
+    return false;
   };
 
   const make_lowercase = (char) => {
@@ -35,10 +28,10 @@ var isPalindrome = function (s) {
   let i = 0;
   let j = s.length - 1;
 
-  let forward_char = s.charAt(i);
-  let reverse_char = s.charAt(j);
+  // let forward_char = s.charAt(i);
+  // let reverse_char = s.charAt(j);
 
-  return is_alpha_numeric("A");
+  console.log(is_alpha_numeric(" "));
 
   // while (i <= j) {
   // if (is_alpha_numeric(s.charAt(i)) == false) {
