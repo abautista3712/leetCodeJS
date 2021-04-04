@@ -32,10 +32,8 @@ var isPalindrome = function (s) {
     // Move pointers to first alpha-numeric character
     if (!is_alpha_numeric(s.charAt(i))) {
       i++;
-      console.log(`---i = ${i}---`);
     } else if (!is_alpha_numeric(s.charAt(j))) {
       j--;
-      console.log(`---j = ${j}---`);
     } else {
       // Compare lowercase converted characters
       if (make_lowercase(s.charAt(i)) != make_lowercase(s.charAt(j))) {
