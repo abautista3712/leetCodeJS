@@ -3,11 +3,9 @@
  * @return {boolean}
  */
 
-const s = "      A man, a plan, a canal: Panama          ";
+const s = "race a car";
 
 var isPalindrome = function (s) {
-  // for (let i = 0; i < s.length; i++) {
-
   // Function to check if alpha-numeric
   const is_alpha_numeric = (char) => {
     if (
@@ -20,52 +18,35 @@ var isPalindrome = function (s) {
     return false;
   };
 
+  // Function to make uppercase characters into lowercase
   const make_lowercase = (char) => {
-    return String.fromCharCode(s.charCodeAt(char) + 32);
+    if (char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90) {
+      return String.fromCharCode(char.charCodeAt(0) + 32);
+    } else return char;
   };
-  // }
 
   let i = 0;
   let j = s.length - 1;
-
-  // let forward_char = s.charAt(i);
-  // let reverse_char = s.charAt(j);
 
   while (i <= j) {
     // Move pointers to first alpha-numeric character
     if (!is_alpha_numeric(s.charAt(i))) {
       i++;
+      console.log(`---i = ${i}---`);
     } else if (!is_alpha_numeric(s.charAt(j))) {
       j--;
+      console.log(`---j = ${j}---`);
+    } else {
+      // Compare lowercase converted characters
+      if (make_lowercase(s.charAt(i)) != make_lowercase(s.charAt(j))) {
+        return false;
+      }
+      // Move pointers to next character
+      i++;
+      j--;
     }
-
-    console.log(s.charAt(i));
-    console.log(s.charAt(j));
   }
-  // if (is_alpha_numeric(forward_char)) {
-  //   if (
-  //     s.charCodeAt(forward_char) >= 65 &&
-  //     s.charCodeAt(forward_char) <= 90
-  //   ) {
-  //     return make_lowercase(forward_char);
-  //   } else {
-  //     return forward_char;
-  //   }
-  // } else {
-  //   console.log("Character is NOT alpha-numeric");
-  // }
-  // console.log(forward_char);
-  // }
-  // return console.log(forward_char);
-  // if (characters[i] == characters[j]) {
-  //     i++;
-  //     j--;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-  // return true;
-  // }
+  return true;
 };
 
 console.log(isPalindrome(s));
