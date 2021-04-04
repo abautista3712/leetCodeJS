@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 
-const s = "      A man, a plan, a canal: Panama";
+const s = "      A man, a plan, a canal: Panama          ";
 
 var isPalindrome = function (s) {
   // for (let i = 0; i < s.length; i++) {
@@ -31,12 +31,17 @@ var isPalindrome = function (s) {
   // let forward_char = s.charAt(i);
   // let reverse_char = s.charAt(j);
 
-  console.log(is_alpha_numeric(" "));
+  while (i <= j) {
+    // Move pointers to first alpha-numeric character
+    if (!is_alpha_numeric(s.charAt(i))) {
+      i++;
+    } else if (!is_alpha_numeric(s.charAt(j))) {
+      j--;
+    }
 
-  // while (i <= j) {
-  // if (is_alpha_numeric(s.charAt(i)) == false) {
-  //   ("Test");
-  // }
+    console.log(s.charAt(i));
+    console.log(s.charAt(j));
+  }
   // if (is_alpha_numeric(forward_char)) {
   //   if (
   //     s.charCodeAt(forward_char) >= 65 &&
