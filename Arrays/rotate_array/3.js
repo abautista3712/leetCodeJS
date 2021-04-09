@@ -15,14 +15,15 @@ var rotate = function (nums, k) {
     cache.push(nums[i]);
   }
 
-  let reverse_cache = cache.reverse();
-  let rev_count = reverse_cache.length - 1;
+  //   let reverse_cache = cache.reverse();
+  //   let rev_count = reverse_cache.length - 1;
+  let cache_count = cache.length - 1;
 
   for (let j = nums.length - 1; j >= 0; j--) {
     if (j >= k) {
       nums[j] = nums[count--];
     } else {
-      nums[j] = reverse_cache[rev_count--];
+      nums[j] = cache[cache_count--];
     }
   }
 
