@@ -5,28 +5,18 @@
  */
 
 const nums = [1, 2, 3, 4, 5, 6, 7];
-const k = 3;
+const k = 1;
 
 var rotate = function (nums, k) {
   let cache = [];
-  let count = k;
 
-  for (let i = k + 1; i < nums.length; i++) {
-    cache.push(nums[i]);
-  }
-
-  //   let reverse_cache = cache.reverse();
-  //   let rev_count = reverse_cache.length - 1;
-  let cache_count = cache.length - 1;
-
-  for (let j = nums.length - 1; j >= 0; j--) {
-    if (j >= k) {
-      nums[j] = nums[count--];
+  for (let i = nums.length; i >= 0; i--) {
+    if (i + k > nums.length) {
+      cache.push(i);
     } else {
-      nums[j] = cache[cache_count--];
+      nums[i] = nums[i - k];
     }
   }
-
   return nums;
 };
 
