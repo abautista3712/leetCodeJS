@@ -10,12 +10,16 @@ const k = 1;
 var rotate = function (nums, k) {
   let cache = [];
 
-  for (let i = nums.length; i >= 0; i--) {
-    if (i + k > nums.length) {
-      cache.push(i);
-    } else {
-      nums[i] = nums[i - k];
+  for (let i = nums.length - 1; i >= 0; i--) {
+    console.log(`---i = ${i}---`);
+    if (i + k > nums.length - 1) {
+      cache.push(nums[i]);
+      console.log(`cache: ${cache}`);
     }
+
+    nums[i] = nums[i - k];
+
+    console.log(nums);
   }
   return nums;
 };
