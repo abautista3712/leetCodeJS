@@ -9,15 +9,21 @@ const k = 1;
 
 var rotate = function (nums, k) {
   let cache = [];
+  let count = 0;
 
   for (let i = nums.length - 1; i >= 0; i--) {
     console.log(`---i = ${i}---`);
     if (i + k > nums.length - 1) {
       cache.push(nums[i]);
-      console.log(`cache: ${cache}`);
     }
 
     nums[i] = nums[i - k];
+
+    console.log(cache);
+
+    if (nums[i - k] == undefined) {
+      nums[i] = cache[count++];
+    }
 
     console.log(nums);
   }
