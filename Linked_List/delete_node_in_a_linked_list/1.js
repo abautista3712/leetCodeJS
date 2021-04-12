@@ -10,8 +10,8 @@
  * @return {void} Do not return anything, modify node in-place instead.
  */
 
-const head = [4, 5, 1, 9];
-const node = 5;
+const head = [-3, 5, -99];
+const node = -3;
 
 var deleteNode = function (node) {
   let node_index = 0;
@@ -21,7 +21,7 @@ var deleteNode = function (node) {
       node_index = i;
     }
   }
-  head.splice(1, node_index);
+  head.splice(node_index, 1);
   return head;
 };
 
