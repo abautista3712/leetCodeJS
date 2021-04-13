@@ -1,28 +1,8 @@
 /**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
  */
-/**
- * @param {ListNode} node
- * @return {void} Do not return anything, modify node in-place instead.
- */
-
-const head = [-3, 5, -99];
-const node = -3;
-
-var deleteNode = function (node) {
-  let node_index = 0;
-
-  for (let i = 0; i < head.length; i++) {
-    if (head[i] == node) {
-      node_index = i;
-    }
-  }
-  head.splice(node_index, 1);
-  return head;
-};
-
-console.log(deleteNode(node));
+var merge = function (nums1, m, nums2, n) {};
