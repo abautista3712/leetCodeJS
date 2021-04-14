@@ -1,39 +1,27 @@
-# Delete Node in a Linked List
+# First Bad Version
 
-Write a function to delete a node in a singly-linked list. You will not be given access to the head of the list, instead you will be given access to the node to be deleted directly.
+You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
 
-It is guaranteed that the node to be deleted is not a tail node in the list.
+Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.
+
+You are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
 
 ## Example 1:
 
-Input: head = [4,5,1,9], node = 5
-Output: [4,1,9]
-Explanation: You are given the second node with value 5, the linked list should become 4 -> 1 -> 9 after calling your function.
+Input: n = 5, bad = 4
+Output: 4
+
+Explanation:
+call isBadVersion(3) -> false
+call isBadVersion(5) -> true
+call isBadVersion(4) -> true
+Then 4 is the first bad version.
 
 ## Example 2:
 
-Input: head = [4,5,1,9], node = 1
-Output: [4,5,9]
-Explanation: You are given the third node with value 1, the linked list should become 4 -> 5 -> 9 after calling your function.
-
-## Example 3:
-
-Input: head = [1,2,3,4], node = 3
-Output: [1,2,4]
-
-## Example 4:
-
-Input: head = [0,1], node = 0
-Output: [1]
-
-## Example 5:
-
-Input: head = [-3,5,-99], node = -3
-Output: [5,-99]
+Input: n = 1, bad = 1
+Output: 1
 
 ### Constraints:
 
-The number of the nodes in the given list is in the range [2, 1000].
--1000 <= Node.val <= 1000
-The value of each node in the list is unique.
-The node to be deleted is in the list and is not a tail node
+1 <= bad <= n <= 231 - 1
