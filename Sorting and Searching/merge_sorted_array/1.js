@@ -12,22 +12,11 @@ const nums2 = [2, 3, 4];
 const n = 3;
 
 var merge = function (nums1, m, nums2, n) {
-  let i = 0;
-  let j = 0;
-
-  while (i < m + n) {
-    if (nums1[i] < nums2[j]) {
-      i++;
-    } else if (nums1[i] > nums2[j]) {
-      let tmp = nums1[i];
-      nums1[i] = nums2[j];
-      nums2[j] = tmp;
-    }
-    if (i > m) {
-      nums1[i] = nums2[j];
-      j++;
-    }
+  while (nums1.length > m) {
+    nums1.pop();
   }
+
+  nums1.push(...nums2);
   return nums1;
 };
 
