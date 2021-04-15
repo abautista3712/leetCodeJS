@@ -17,6 +17,16 @@ var merge = function (nums1, m, nums2, n) {
   }
 
   nums1.push(...nums2);
+
+  for (let i = 1; i < nums1.length; i++) {
+    let current_value = nums1[i];
+    let j = i - 1;
+    while (j >= 0 && nums1[j] > current_value) {
+      nums1[j + 1] = nums1[j];
+      j--;
+    }
+    nums1[j + 1] = current_value;
+  }
   return nums1;
 };
 
