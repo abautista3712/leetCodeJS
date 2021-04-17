@@ -3,26 +3,11 @@
  * @return {number}
  */
 
-const n = 2;
+const n = 3;
 
 var climbStairs = function (n) {
-  // Permutation w/o repetition
-  // (n!) / (n - r)!
-
-  const factorial = (num) => {
-    if (num == 0) {
-      return 1;
-    } else {
-      let total = 1;
-      while (num > 0) {
-        total = total * num;
-        num--;
-      }
-      // console.log(total);
-      return total;
-    }
-  };
-  factorial(4);
+  // Fibonacci Sequence
+  // S(n) = S(n-1) + S(n-2)
 };
 
 console.log(climbStairs(n));
