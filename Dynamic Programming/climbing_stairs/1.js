@@ -3,14 +3,21 @@
  * @return {number}
  */
 
-const n = 3;
+const n = 4;
 
 var climbStairs = function (n) {
-  if (n == 1 || n == 2) {
-    return n;
+  let a = 1,
+    b = 0,
+    tmp;
+
+  while (n >= 0) {
+    tmp = a;
+    a = a + b;
+    b = tmp;
+    n--;
   }
-  // Fibonacci Sequence
-  // S(n) = S(n-1) + S(n-2)
+
+  return b;
 };
 
 console.log(climbStairs(n));
