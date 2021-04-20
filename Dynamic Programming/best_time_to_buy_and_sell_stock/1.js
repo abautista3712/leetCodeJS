@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const prices = [7, 6, 4, 3, 1];
+const prices = [3, 2, 6, 5, 0, 3];
 
 var maxProfit = function (prices) {
   let i = 0;
@@ -15,7 +15,7 @@ var maxProfit = function (prices) {
     return 0;
   }
 
-  while (i < j) {
+  while (i <= j) {
     if (!min) {
       min = prices[i];
     } else if (min > prices[i]) {
@@ -30,7 +30,13 @@ var maxProfit = function (prices) {
     i++;
     j--;
   }
-  return max - min;
+
+  console.log(`min = ${min}`);
+  console.log(`max = ${max}`);
+
+  if (min <= max) {
+    return max - min;
+  } else return 0;
 };
 
 console.log(maxProfit(prices));
