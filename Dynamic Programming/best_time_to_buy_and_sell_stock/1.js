@@ -9,14 +9,17 @@ var maxProfit = function (prices) {
   let i = 0;
   let j = prices.length - 1;
 
+  let min;
+
   while (j >= 0) {
     if (!min) {
-      let min = prices[j];
-    } else {
+      min = prices[j];
+    } else if (min > prices[j]) {
       min = prices[j];
     }
     j--;
   }
+  return min;
 };
 
 console.log(maxProfit(prices));
