@@ -11,25 +11,22 @@ var maxProfit = function (prices) {
 
   let min, max;
 
-  while (i < prices.length) {
+  while (i < j) {
+    if (!min) {
+      min = prices[i];
+    } else if (min > prices[i]) {
+      min = prices[i];
+    }
+
     if (!max) {
-      max = prices[i];
-    } else if (max < prices[i]) {
-      max = prices[i];
+      max = prices[j];
+    } else if (max < prices[j]) {
+      max = prices[j];
     }
     i++;
-  }
-  return max;
-
-  while (j >= 0) {
-    if (!min) {
-      min = prices[j];
-    } else if (min > prices[j]) {
-      min = prices[j];
-    }
     j--;
   }
-  return min;
+  return max - min;
 };
 
 console.log(maxProfit(prices));
