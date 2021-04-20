@@ -1,29 +1,28 @@
-# Climbing Stairs
+# Best Time to Buy and Sell Stock
 
-You are climbing a staircase. It takes n steps to reach the top.
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
 
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
 ## Example 1:
 
-Input: n = 2
-Output: 2
+Input: prices = [7,1,5,3,6,4]
+Output: 5
 
-Explanation: There are two ways to climb to the top.
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
 
-1. 1 step + 1 step
-2. 2 steps
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 
 ## Example 2:
 
-Input: n = 3
-Output: 3
-Explanation: There are three ways to climb to the top.
+Input: prices = [7,6,4,3,1]
+Output: 0
 
-1. 1 step + 1 step + 1 step
-2. 1 step + 2 steps
-3. 2 steps + 1 step
+Explanation: In this case, no transactions are done and the max profit = 0.
 
 ### Constraints:
 
-1 <= n <= 45
+1 <= prices.length <= 10^5
+0 <= prices[i] <= 10^4
