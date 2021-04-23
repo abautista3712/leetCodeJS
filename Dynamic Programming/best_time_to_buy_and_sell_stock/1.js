@@ -9,7 +9,8 @@ var maxProfit = function (prices) {
   let i = 0;
   let max_return;
 
-  let buy, sell;
+  let buy = null,
+    sell = null;
 
   if (!prices.length || prices.length == 1) {
     return 0;
@@ -22,8 +23,13 @@ var maxProfit = function (prices) {
       buy = prices[i];
     }
     i++;
+    if (!sell) {
+      sell = prices[i];
+    } else if (sell < prices[i]) {
+      sell = prices[i];
+    }
   }
-  return buy;
+  return sell;
 };
 
 console.log(maxProfit(prices));
