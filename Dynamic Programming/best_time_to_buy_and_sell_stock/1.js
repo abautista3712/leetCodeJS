@@ -16,25 +16,20 @@ var maxProfit = function (prices) {
     return 0;
   }
 
-  while (i < prices.length) {
-    while (i < prices.length && prices[i + 1] < prices[i]) {
-      if (!buy) {
-        buy = prices[i];
-      } else if (buy > prices[i]) {
-        buy = prices[i];
-      }
+  while (i < prices.length - 1) {
+    while (i < prices.length - 1 && prices[i + 1] <= prices[i]) {
       i++;
     }
-    while (i < prices.length && prices[i + 1] > prices[i]) {
-      if (!sell) {
-        sell = prices[i];
-      } else if (sell < prices[i]) {
-        sell = prices[i];
-      }
-      i++;
-    }
+    buy = prices[i];
+    // while (i < prices.length && prices[i + 1] > prices[i]) {
+    //   if (!sell) {
+    //     sell = prices[i];
+    //   } else if (sell < prices[i]) {
+    //     sell = prices[i];
+    //   }
+    //   i++;
+    // }
+    return buy;
   }
-  return sell;
 };
-
 console.log(maxProfit(prices));
