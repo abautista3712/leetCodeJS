@@ -7,6 +7,7 @@ const prices = [7, 1, 5, 3, 6, 4];
 
 var maxProfit = function (prices) {
   let i = 0;
+  let n = prices.length - 1;
   let max_return;
 
   let buy = null,
@@ -16,19 +17,11 @@ var maxProfit = function (prices) {
     return 0;
   }
 
-  while (i < prices.length - 1) {
-    while (i < prices.length - 1 && prices[i + 1] <= prices[i]) {
+  while (i < n) {
+    while (i < n && prices[i + 1] <= prices[i]) {
       i++;
     }
     buy = prices[i];
-    // while (i < prices.length && prices[i + 1] > prices[i]) {
-    //   if (!sell) {
-    //     sell = prices[i];
-    //   } else if (sell < prices[i]) {
-    //     sell = prices[i];
-    //   }
-    //   i++;
-    // }
     return buy;
   }
 };
