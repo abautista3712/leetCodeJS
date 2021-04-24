@@ -22,7 +22,12 @@ var maxProfit = function (prices) {
       i++;
     }
     buy = prices[i];
-    return buy;
+    while (i < n && prices[i + 1] > prices[i]) {
+      i++;
+    }
+    sell = prices[i];
+
+    max_return = sell - buy;
   }
 };
 console.log(maxProfit(prices));
