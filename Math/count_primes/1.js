@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const n = 10;
+const n = -1;
 
 var countPrimes = function (n) {
   let count = 0;
@@ -17,7 +17,7 @@ var countPrimes = function (n) {
     return true;
   };
 
-  if (n === 1) {
+  if (n === 0 || n === 1) {
     return 0;
   } else if (n > 1) {
     for (let i = 2; i < n; i++) {
