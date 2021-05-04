@@ -32,6 +32,7 @@ var countPrimes = function (n) {
   } else if (n > 1) {
     for (let i = 2; i < n; i++) {
       if (isPrime(i)) {
+        console.log(`PRIME = ${i}`);
         count++;
       }
     }
