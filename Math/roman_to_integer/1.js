@@ -1,13 +1,16 @@
 /**
- * @param {number} n
- * @return {boolean}
+ * @param {string} s
+ * @return {number}
  */
-const n = 45;
-var isPowerOfThree = function (n) {
-  function getBaseLog(x, y) {
-    return Math.log(y) / Math.log(x);
-  }
 
-  return getBaseLog(3, n);
+const s = "III";
+
+var romanToInt = function (s) {
+  let total = 0;
+
+  if (s.charAt(0) == "I") {
+    return 1;
+  }
 };
-console.log(isPowerOfThree(n));
+
+console.log(romanToInt(s));
