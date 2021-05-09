@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-const s = "XL";
+const s = "MCMXCIV";
 
 var romanToInt = function (s) {
   let total = 0;
