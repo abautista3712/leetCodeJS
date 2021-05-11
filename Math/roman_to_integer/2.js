@@ -36,7 +36,12 @@ var romanToInt = function (s) {
         break;
     }
   }
-  return int_s;
+
+  let total = 0;
+  for (let i = 0; i < int_s.length; i++) {
+    total += int_s[i];
+  }
+  return total;
 };
 
 console.log(romanToInt(s));
