@@ -39,7 +39,25 @@ var romanToInt = function (s) {
 
   let total = 0;
   for (let i = 0; i < int_s.length; i++) {
-    total += int_s[i];
+    if (i == 1) {
+      if (i + 1 == 5 || i + 1 == 10) {
+        total -= int_s[i];
+      } else {
+        total += int_s[i];
+      }
+    } else if (i == 10) {
+      if (i + 1 == 50 || i + 1 == 100) {
+        total -= int_s[i];
+      } else {
+        total += int_s[i];
+      }
+    } else if (i == 100) {
+      if (i + 1 == 500 || i + 1 == 1000) {
+        total -= int_s[i];
+      } else {
+        total += int_s[i];
+      }
+    } else total += int_s[i];
   }
   return total;
 };
