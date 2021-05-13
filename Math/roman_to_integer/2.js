@@ -3,13 +3,13 @@
  * @return {number}
  */
 
-const s = "III";
+const s = "MCMXCIV";
 
 var romanToInt = function (s) {
   let int_s = [];
 
   for (let i = 0; i < s.length; i++) {
-    switch (s.charAt(0)) {
+    switch (s.charAt(i)) {
       case "I":
         int_s[i] = 1;
         break;
@@ -39,20 +39,20 @@ var romanToInt = function (s) {
 
   let total = 0;
   for (let i = 0; i < int_s.length; i++) {
-    if (i == 1) {
-      if (i + 1 == 5 || i + 1 == 10) {
+    if (int_s[i] == 1) {
+      if (int_s[i + 1] == 5 || int_s[i + 1] == 10) {
         total -= int_s[i];
       } else {
         total += int_s[i];
       }
-    } else if (i == 10) {
-      if (i + 1 == 50 || i + 1 == 100) {
+    } else if (int_s[i] == 10) {
+      if (int_s[i + 1] == 50 || int_s[i + 1] == 100) {
         total -= int_s[i];
       } else {
         total += int_s[i];
       }
-    } else if (i == 100) {
-      if (i + 1 == 500 || i + 1 == 1000) {
+    } else if (int_s[i] == 100) {
+      if (int_s[i + 1] == 500 || int_s[i + 1] == 1000) {
         total -= int_s[i];
       } else {
         total += int_s[i];
