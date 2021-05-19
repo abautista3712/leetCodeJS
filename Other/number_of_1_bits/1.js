@@ -1,34 +1,12 @@
 /**
- * initialize your data structure here.
- */
-var MinStack = function () {};
-
-/**
- * @param {number} val
- * @return {void}
- */
-MinStack.prototype.push = function (val) {};
-
-/**
- * @return {void}
- */
-MinStack.prototype.pop = function () {};
-
-/**
+ * @param {number} n - a positive integer
  * @return {number}
  */
-MinStack.prototype.top = function () {};
+const n = 3;
 
-/**
- * @return {number}
- */
-MinStack.prototype.getMin = function () {};
+var hammingWeight = function (n) {
+  let result = n.toString(2);
+  return result;
+};
 
-/**
- * Your MinStack object will be instantiated and called as such:
- * var obj = new MinStack()
- * obj.push(val)
- * obj.pop()
- * var param_3 = obj.top()
- * var param_4 = obj.getMin()
- */
+console.log(hammingWeight(n));
