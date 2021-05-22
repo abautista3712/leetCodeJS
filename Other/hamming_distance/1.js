@@ -11,10 +11,11 @@ var hammingDistance = function (x, y) {
   // Convert integer y to binary
   // Conditional statement
   //     -Scan from right to left
-  //     -Boolean variable, default false
-  //         -If 1, set to true
-  //         -Move left, add one to Count variable
+  //     -Count variable
+  //         -If 0, move left
+  //         -If 1, add one to Count, move left
   //         -If 1 again, return Count variable
+  //         -Else add one to count and move left until 1 again
 };
 
 console.log(hammingDistance(x, y));
