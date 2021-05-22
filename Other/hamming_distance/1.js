@@ -8,7 +8,11 @@ const y = 4;
 
 var hammingDistance = function (x, y) {
   // Convert integer x to binary
+  const binary_x = x.toString(2);
   // Convert integer y to binary
+  const binary_y = y.toString(2);
+
+  return binary_y;
   // Conditional statement
   //     -Scan from right to left
   //     -Count variable
