@@ -7,19 +7,10 @@ const x = 1;
 const y = 4;
 
 var hammingDistance = function (x, y) {
-  // Convert integer x to binary
-  const binary_x = x.toString(2);
-  // Convert integer y to binary
-  const binary_y = y.toString(2);
+  const bi_x_length = x.toString(2).length;
+  const bi_y_length = y.toString(2).length;
 
-  return binary_y;
-  // Conditional statement
-  //     -Scan from right to left
-  //     -Count variable
-  //         -If 0, move left
-  //         -If 1, add one to Count, move left
-  //         -If 1 again, return Count variable
-  //         -Else add one to count and move left until 1 again
+  return bi_y_length - bi_x_length;
 };
 
 console.log(hammingDistance(x, y));
