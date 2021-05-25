@@ -3,14 +3,20 @@
  * @param {number} y
  * @return {number}
  */
-const x = 3;
-const y = 1;
+const x = 93;
+const y = 73;
 
 var hammingDistance = function (x, y) {
-  const bi_x_length = x.toString(2).length;
-  const bi_y_length = y.toString(2).length;
+  const bi_x = x.toString(2);
+  const bi_y = y.toString(2);
 
-  return Math.abs(bi_x_length - bi_y_length);
+  if (bi_x.length != bi_y.length) {
+    return Math.abs(bi_x.length - bi_y.length);
+  } else {
+    console.log("bi_x.length != bi_y.length");
+  }
+  //   console.log(bi_x_length);
+  //   console.log(bi_y_length);
 };
 
 console.log(hammingDistance(x, y));
