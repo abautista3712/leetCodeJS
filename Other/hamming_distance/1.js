@@ -13,10 +13,25 @@ var hammingDistance = function (x, y) {
   if (bi_x.length != bi_y.length) {
     return Math.abs(bi_x.length - bi_y.length);
   } else {
-    console.log("bi_x.length != bi_y.length");
+    let n = bi_x.length;
+    let is_binary_equal = true;
+    let count = 0;
+
+    for (let i = 0; i < n; i++) {
+      if (bi_x[i] != bi_y[i]) {
+        if (is_binary_equal == true) {
+          is_binary_equal = false;
+        } else {
+          is_binary_equal = true;
+        }
+      }
+
+      if (is_binary_equal == false) {
+        count++;
+      }
+    }
+    return count;
   }
-  //   console.log(bi_x_length);
-  //   console.log(bi_y_length);
 };
 
 console.log(hammingDistance(x, y));
