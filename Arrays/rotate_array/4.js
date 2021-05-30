@@ -4,12 +4,15 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 
-const nums = [1, 2];
+const nums = [1, 2, 3, 4, 5, 6, 7];
 const k = 3;
 
 var rotate = function (nums, k) {
-  // Reverse on diagonal
-  // Reverse order
+  let cache = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    cache.push(nums[i]);
+  }
 };
 
 console.log(rotate(nums, k));
