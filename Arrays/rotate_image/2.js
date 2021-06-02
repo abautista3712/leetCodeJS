@@ -15,6 +15,9 @@ var rotate = function (matrix) {
   // [4,5,6] -> [2,5,8]
   // [7,8,9]    [3,6,9]
   //  Reverse left and right
+  // [1,4,7]      [7,4,1]
+  // [2,5,8]  ->  [8,5,2]
+  // [3,6,9]      [9,6,3]
 };
 
 console.log(rotate(matrix));
