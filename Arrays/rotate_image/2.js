@@ -49,6 +49,19 @@ var rotate = function (matrix) {
 
   // (matrix[2][0]) <-> (matrix[2][2]);
   // (matrix[2][1]) <-> (matrix[2][1]);
+
+  for (let i = 0; i < n; i++) {
+    let j = 0;
+    let k = n - 1;
+    while (j <= k) {
+      let tmp = matrix[i][j];
+      matrix[i][j] = matrix[i][k];
+      matrix[i][k] = tmp;
+      j++;
+      k--;
+    }
+  }
+  console.log(matrix);
 };
 
 console.log(rotate(matrix));
