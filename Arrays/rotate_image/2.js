@@ -4,9 +4,8 @@
  */
 
 const matrix = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+  [1, 2],
+  [3, 4],
 ];
 
 var rotate = function (matrix) {
@@ -34,8 +33,6 @@ var rotate = function (matrix) {
     }
   }
 
-  console.log(matrix);
-
   //  Reverse left and right
   // [1,4,7]      [7,4,1]
   // [2,5,8]  ->  [8,5,2]
@@ -61,7 +58,7 @@ var rotate = function (matrix) {
       k--;
     }
   }
-  console.log(matrix);
+  return matrix;
 };
 
 console.log(rotate(matrix));
