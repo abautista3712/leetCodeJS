@@ -58,7 +58,7 @@ var rotate = function (matrix) {
       k--;
     }
   }
-  return matrix;
+  console.log(matrix);
 };
 
-console.log(rotate(matrix));
+rotate(matrix);
