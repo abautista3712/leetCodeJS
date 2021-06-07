@@ -7,8 +7,11 @@ const nums1 = [4, 9, 5];
 const nums2 = [9, 4, 9, 8, 4];
 
 var intersect = function (nums1, nums2) {
-  let filteredArray = nums1.filter((x) => nums2.includes(x));
-  console.log(filteredArray);
+  let intersection = nums1.filter((x) =>
+    nums2.includes(x) ? nums2.splice(nums2.indexOf(x), 1) : false
+  );
+
+  return intersection;
 };
 
 console.log(intersect(nums1, nums2));
