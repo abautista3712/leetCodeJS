@@ -5,6 +5,11 @@
 const n = 4;
 
 var countAndSay = function (n) {
+  // Base Case
+  if (n == 1) {
+    return 1;
+  }
+
   // Read
   // -Create number variable to keep track of current value being read
   // Say
