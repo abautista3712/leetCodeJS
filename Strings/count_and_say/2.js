@@ -7,14 +7,28 @@ const n = 2;
 var countAndSay = function (n) {
   // Read
   // -Create number variable to keep track of current value being read
-  let count_value;
+  let output_string = "1";
 
   for (let i = 1; i <= n; i++) {
-    let output_string = n.toString;
-
     if (n == 1) {
       return output_string;
     }
+
+    output_string = "11";
+
+    let str_length = output_string.length;
+
+    let hash = {};
+
+    for (let j = 0; j < str_length; j++) {
+      if (hash.value == output_string.charAt(j)) {
+        hash.count++;
+      } else {
+        hash.value = output_string.charAt(j);
+        hash.count = 1;
+      }
+    }
+    console.log(hash);
   }
 
   // Say
