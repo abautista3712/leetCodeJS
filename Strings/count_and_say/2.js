@@ -14,8 +14,6 @@ var countAndSay = function (n) {
       return output_string;
     }
 
-    output_string = "11";
-
     let str_length = output_string.length;
 
     let hash = {};
@@ -28,8 +26,14 @@ var countAndSay = function (n) {
         hash.count = 1;
       }
     }
-    console.log(hash);
+
+    let count = hash.count.toString();
+    let value = hash.value;
+
+    output_string = count.concat(value);
   }
+
+  return output_string;
 
   // Say
   // -Convert number variable to "say" value
