@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {string}
  */
-const n = 3;
+const n = 2;
 
 var countAndSay = function (n) {
   let output_string = "1";
@@ -15,19 +15,23 @@ var countAndSay = function (n) {
     let str_length = output_string.length;
     let hash = {};
 
+    console.log(`output_string = ${output_string}`);
+
     for (let j = 0; j < str_length; j++) {
-      if (hash.value == output_string.charAt(j)) {
-        hash.count++;
+      let key = output_string.charAt(j);
+      if (!hash[key]) {
+        hash[key] = 1;
       } else {
-        hash.value = output_string.charAt(j);
-        hash.count = 1;
+        hash[key]++;
       }
     }
 
-    let count = hash.count.toString();
-    let value = hash.value;
+    console.log(hash);
 
-    output_string = count.concat(value);
+    // let count = hash[key].toString();
+    // let value = key;
+
+    // output_string = count.concat(value);
   }
 
   return output_string;
