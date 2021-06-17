@@ -5,6 +5,7 @@
 const n = 45;
 var isPowerOfThree = function (n) {
   // Find cube root of number
+  return Math.cbrt(n);
   // If number has a remainder, return false
   // Otherwise (if no remainder), return true
 };
