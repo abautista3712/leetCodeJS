@@ -2,11 +2,11 @@
  * @param {number} n
  * @return {boolean}
  */
-const n = 9;
+const n = 45;
 var isPowerOfThree = function (n) {
   if (n == 0) {
     return false;
-  } else if (Math.cbrt(n) % 3 > 0) {
+  } else if (n % 3 > 0) {
     return false;
   } else {
     return true;
