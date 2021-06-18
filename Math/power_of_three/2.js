@@ -2,14 +2,8 @@
  * @param {number} n
  * @return {boolean}
  */
-const n = 45;
+const n = 27;
 var isPowerOfThree = function (n) {
-  if (n == 0) {
-    return false;
-  } else if (n % 3 > 0) {
-    return false;
-  } else {
-    return true;
-  }
+  return Math.log(n) / Math.log(3);
 };
 console.log(isPowerOfThree(n));
