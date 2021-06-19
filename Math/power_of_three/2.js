@@ -17,5 +17,9 @@ var isPowerOfThree = function (n) {
       return true;
     }
   }
+
+  if (n < 0) {
+    return false;
+  }
 };
 console.log(isPowerOfThree(n));
