@@ -5,7 +5,6 @@
 
 const s = "{[]}";
 var isValid = function (s) {
-  let isOpen = false;
   let orderCache = [];
 
   for (let i = 0; i < s.length; i++) {
@@ -14,7 +13,6 @@ var isValid = function (s) {
       case "(":
       case "{":
       case "[":
-        isOpen = true;
         orderCache.push(current_char);
         break;
       case ")":
