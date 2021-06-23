@@ -3,11 +3,16 @@
  * @return {boolean}
  */
 
-const s = "{[]}";
+const s = "((";
 var isValid = function (s) {
   let orderCache = [];
+  let n = s.length;
 
-  for (let i = 0; i < s.length; i++) {
+  if (n % 2 != 0) {
+    return false;
+  }
+
+  for (let i = 0; i < n; i++) {
     let current_char = s.charAt(i);
     switch (current_char) {
       case "(":
@@ -38,6 +43,11 @@ var isValid = function (s) {
         break;
     }
   }
-  return true;
+
+  if (orderCache.length == 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
 console.log(isValid(s));
