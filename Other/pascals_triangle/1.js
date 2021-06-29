@@ -2,7 +2,7 @@
  * @param {number} numRows
  * @return {number[][]}
  */
-const numRows = 5;
+const numRows = 6;
 var generate = function (numRows) {
   let arr = [];
 
@@ -12,7 +12,7 @@ var generate = function (numRows) {
       if ((j == 0) | (j == i)) {
         sub_arr.push(1);
       } else {
-        sub_arr.push("-");
+        sub_arr.push(arr[i - 1][j - 1] + arr[i - 1][j]);
       }
     }
     arr.push(sub_arr);
