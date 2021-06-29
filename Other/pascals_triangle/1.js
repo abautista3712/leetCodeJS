@@ -9,7 +9,11 @@ var generate = function (numRows) {
   for (let i = 0; i < numRows; i++) {
     let sub_arr = [];
     for (let j = 0; j <= i; j++) {
-      sub_arr.push(1);
+      if ((j == 0) | (j == i)) {
+        sub_arr.push(1);
+      } else {
+        sub_arr.push("-");
+      }
     }
     arr.push(sub_arr);
   }
