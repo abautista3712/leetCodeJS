@@ -30,6 +30,12 @@ var hammingDistance = function (x, y) {
         distance++;
       }
     }
+  } else {
+    for (let i = 0; i < bit_x.length; i++) {
+      if (bit_y.charAt(i + adj) != bit_x.charAt(i)) {
+        distance++;
+      }
+    }
   }
 
   return distance;
