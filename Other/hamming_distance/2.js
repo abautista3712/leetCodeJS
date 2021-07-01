@@ -37,21 +37,7 @@ var hammingDistance = function (x, y) {
       }
     }
   }
-
   return distance;
-
-  //   let combined_int = parseInt(bit_x) + parseInt(bit_y);
-
-  //   console.log(combined_int.toString());
-
-  //   let count = 0;
-  //   while (combined_int >= 1) {
-  //     if (combined_int % 10 == 1) {
-  //       count++;
-  //     }
-  //     combined_int = Math.floor(combined_int / 10);
-  //   }
-  //   return count;
 };
 
 console.log(hammingDistance(x, y));
