@@ -2,4 +2,9 @@
  * @param {number} n - a positive integer
  * @return {number} - a positive integer
  */
-var reverseBits = function (n) {};
+const n = 11111111111111111111111111111101;
+var reverseBits = function (n) {
+  // Reverse order of binary string
+  // Convert n to integer
+};
+console.log(reverseBits(n));
